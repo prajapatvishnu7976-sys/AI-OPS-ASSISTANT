@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    @apply bg-[#030712] text-white antialiased;
+    background: linear-gradient(135deg, #030712 0%, #0a0f1a 50%, #030712 100%);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #1e40af 0%, #3b82f6 100%);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #2563eb 0%, #60a5fa 100%);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+  
+  .glass-hover {
+    @apply glass transition-all duration-300 cursor-pointer;
+  }
+  
+  .glass-hover:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1e40af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-border {
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9)) padding-box,
+                linear-gradient(135deg, #1e40af, #3b82f6) border-box;
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
+                0 0 40px rgba(59, 130, 246, 0.2),
+                0 0 60px rgba(59, 130, 246, 0.1);
+  }
+  
+  .agent-card {
+    @apply glass p-6 rounded-2xl relative overflow-hidden;
+    @apply hover:scale-105 transition-all duration-300;
+  }
+  
+  .agent-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .agent-card:hover::before {
+    opacity: 1;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    @apply px-6 py-3 rounded-xl font-semibold text-white;
+    @apply transition-all duration-300;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  .input-field {
+    @apply w-full px-6 py-4 rounded-xl text-lg outline-none;
+    @apply transition-all duration-300;
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    color: #f1f5f9;
+  }
+  
+  .input-field::placeholder {
+    color: #64748b;
+  }
+  
+  .input-field:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  }
+  
+  .metric-card {
+    @apply glass p-5 rounded-xl text-center;
+    @apply hover:scale-105 transition-all duration-300;
+  }
+  
+  .metric-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  }
+  
+  .result-card {
+    @apply glass p-6 rounded-2xl;
+    @apply transition-all duration-300;
+  }
+  
+  .result-card:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+  
+  .step-box {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.15) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-left: 4px solid #3b82f6;
+    @apply rounded-xl p-4 mb-3;
+    @apply transition-all duration-300;
+  }
+  
+  .step-box:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateX(5px);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+  
+  .shimmer {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+}

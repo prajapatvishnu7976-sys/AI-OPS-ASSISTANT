@@ -1,0 +1,33 @@
+# Core
+fastapi==0.109.0
+uvicorn==0.27.0
+python-dotenv==1.0.0
+pydantic==2.5.3
+
+# LangChain & AI
+langchain==0.1.0
+langchain-openai==0.0.5
+langchain-google-genai==0.0.6
+langchain-community==0.0.13
+
+# HTTP & Async
+aiohttp==3.9.1
+httpx==0.26.0
+requests==2.31.0
+
+# Voice
+python-multipart==0.0.6
+
+# Data
+numpy==1.26.3
+
+# Logging
+loguru==0.7.2
+colorama==0.4.6
+
+# WebSockets
+websockets==12.0
+
+# ✨ NEW: Advanced Features
+redis==5.0.1  # Redis caching
+sse-starlette==1.8.2  # Server-Sent Events
