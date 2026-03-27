@@ -1,8 +1,9 @@
 # Core
 fastapi==0.109.0
-uvicorn==0.27.0
+uvicorn[standard]==0.27.0
 python-dotenv==1.0.0
-pydantic==2.5.3
+pydantic==2.10.6
+pydantic-core==2.27.2
 
 # LangChain & AI
 langchain==0.1.0
@@ -28,6 +29,5 @@ colorama==0.4.6
 # WebSockets
 websockets==12.0
 
-# ✨ Advanced Features
-# redis==5.0.1  # Disabled for free tier
+# Advanced Features
 sse-starlette==1.8.2
