@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
 
-echo "📦 Installing Python dependencies..."
-pip install --upgrade pip
-pip install -r requirements.txt
+echo "🐍 Python version:"
+python --version
+
+echo "📦 Upgrading pip..."
+pip install --upgrade pip setuptools wheel
+
+echo "📥 Installing dependencies..."
+pip install -r requirements.txt --no-cache-dir
 
 echo "✅ Build complete!"

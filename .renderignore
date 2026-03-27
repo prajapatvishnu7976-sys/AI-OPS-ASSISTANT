@@ -1,2 +1,7 @@
 pyproject.toml
 poetry.lock
+*.pyc
+__pycache__/
+.git/
+.env
+.venv/
