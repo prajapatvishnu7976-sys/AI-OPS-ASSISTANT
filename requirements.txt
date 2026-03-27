@@ -1,8 +1,8 @@
-# Core - Using versions with pre-built wheels
+# Core - Binary wheels only
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
 python-dotenv==1.0.0
-pydantic==2.5.3
+pydantic==2.5.2
 
 # LangChain & AI
 langchain==0.1.0
