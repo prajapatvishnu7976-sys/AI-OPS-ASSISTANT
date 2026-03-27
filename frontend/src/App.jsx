@@ -11,10 +11,12 @@ import {
   Cpu, 
   CheckCircle,
   BarChart3,
-  Home
+  Home,
+  Mic
 } from 'lucide-react';
 import Dashboard from './components/Dashboard';
 import RealtimeDashboard from './components/RealtimeDashboard';
+import VoiceAssistant from './components/VoiceAssistant';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const AppContent = () => {
@@ -199,6 +201,9 @@ const AppContent = () => {
                 <NavLink to="/" icon={Home} active={location.pathname === '/'}>
                   Research
                 </NavLink>
+                <NavLink to="/voice" icon={Mic} active={location.pathname === '/voice'}>
+                  Voice AI
+                </NavLink>
                 <NavLink to="/dashboard" icon={BarChart3} active={location.pathname === '/dashboard'}>
                   Analytics
                 </NavLink>
@@ -326,6 +331,7 @@ const AppContent = () => {
         {/* ============ ROUTES ============ */}
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/voice" element={<VoiceAssistant />} />
           <Route path="/dashboard" element={<RealtimeDashboard />} />
         </Routes>
 
